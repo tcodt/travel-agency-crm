@@ -121,7 +121,7 @@ const TouristCenters: React.FC = () => {
             <Autocomplete
               options={categories}
               value={selectedCenter?.category || "هتل"}
-              onChange={(event, newValue) =>
+              onChange={(_event, newValue) =>
                 setSelectedCenter((prev) => ({
                   ...(prev || { id: Date.now(), name: "", location: "" }),
                   category:
