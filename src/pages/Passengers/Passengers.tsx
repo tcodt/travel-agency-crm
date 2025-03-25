@@ -42,7 +42,7 @@ const Passengers: React.FC = () => {
   };
 
   const handleClose = (
-    event?: React.SyntheticEvent | Event,
+    _event?: React.SyntheticEvent | Event,
     reason?: SnackbarCloseReason
   ) => {
     if (reason === "clickaway") {
@@ -154,7 +154,7 @@ const Passengers: React.FC = () => {
               <Autocomplete
                 options={flightOptions}
                 value={selectedPassenger.flight}
-                onChange={(event, newValue) =>
+                onChange={(_event, newValue) =>
                   setSelectedPassenger({
                     ...selectedPassenger,
                     flight: newValue || "",

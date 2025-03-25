@@ -18,7 +18,7 @@ const DashboardPieChart: React.FC = () => {
       className="bg-white bg-opacity-70 rounded-full"
     >
       <Pie data={data} outerRadius={80} fill="#8884d8" dataKey="value" label>
-        {data.map((entry, index) => (
+        {data.map((_entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index]} />
         ))}
       </Pie>

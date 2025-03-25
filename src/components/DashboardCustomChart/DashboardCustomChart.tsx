@@ -54,7 +54,7 @@ const data = [
   },
 ];
 
-const getIntroOfPage = (label) => {
+const getIntroOfPage = (label: string) => {
   if (label === "شنبه") {
     return "پروازهای روز شنبه";
   }
@@ -79,12 +79,22 @@ const getIntroOfPage = (label) => {
   return "";
 };
 
-const CustomTooltip = ({ active, payload, label }) => {
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: { value: number }[];
+  label?: string;
+}
+
+const CustomTooltip: React.FC<CustomTooltipProps> = ({
+  active,
+  payload,
+  label,
+}) => {
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip">
         <p className="label">{`${label} : ${payload[0].value}`}</p>
-        <p className="intro">{getIntroOfPage(label)}</p>
+        <p className="intro">{getIntroOfPage(label || "")}</p>
         <p className="desc">اطلاعات بیشتر در اینجا نمایش داده می‌شود.</p>
       </div>
     );
